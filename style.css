@@ -4,6 +4,7 @@
     --blue: hsl(248, 32%, 49%);
     --darkBlue: hsl(249, 10%, 26%);
     --grayishBlue: hsl(246, 25%, 77%);
+    --greenClicked: hsl(154, 59%, 60%);
 }
 body{
     margin: 0;
@@ -28,6 +29,7 @@ main{
 h1{
     color: white;
     text-align: center;
+    padding: 0px 20px;
 }
 .text-description{
     color: white;
@@ -81,6 +83,10 @@ h1{
     border: none;
     border-radius: 5px;
     box-shadow: 0px 5px rgba(0,0,0,0.11);
+}
+.input-submit:hover{
+    background-color: var(--greenClicked);
+    cursor: pointer;
 }
 .text-terms{
     font-size: 11px;
