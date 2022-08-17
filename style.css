@@ -57,7 +57,7 @@ h1{
     flex-direction: column;
     padding: 10px;
     width: auto;
-    height: 21rem;   
+    min-height: 21rem;   
     border-radius: 10px;
 }
 .form-main{
@@ -97,4 +97,17 @@ h1{
 .text-terms span{
     color: var(--red);
 }
-
+.input-error{
+    border: 2px solid var(--red);
+    padding-right: 10px;
+    background: url("./images/icon-error.svg") no-repeat 260px;
+    background-size: 20px;
+}
+.text-error{
+    font-size: 10px;
+    text-align: right;
+    color: var(--red);
+    margin: 0;
+    padding: 0;
+    line-height: 0.5;
+}
