@@ -12,14 +12,19 @@ caSubmit.addEventListener('click', (el) => {
         let placeHolder = f[i].getAttribute('placeholder');
         let validation = checkInfo(f[i].value, type);
         if(!validation){
-            f[i].classList.add('input-error');
-            p.classList.add('text-error');
-            if(type == 'text' || type == 'password'){
-                p.innerText = placeHolder + ' cannot be empty or is wrong';
-            }else if(type == 'email'){
-                p.innerText = 'Looks like this is not an email';
+            if(f[i].classList.contains('input-error')){
+                el.preventDefault();
+                return
+            }else{
+                f[i].classList.add('input-error');
+                p.classList.add('text-error');
+                if(type == 'text' || type == 'password'){
+                    p.innerText = placeHolder + ' cannot be empty or is wrong';
+                }else if(type == 'email'){
+                    p.innerText = 'Looks like this is not an email';
+                }
+                f[i].parentNode.insertBefore(p, f[i+1]);
             }
-            f[i].parentNode.insertBefore(p, f[i+1]);
         }else{
             let nextError = f[i].nextElementSibling;
             if(nextError.tagName == 'P'){
